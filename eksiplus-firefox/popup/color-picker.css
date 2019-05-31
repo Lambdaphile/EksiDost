@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: blanchedalmond;
+  height: 145px;
+  width: 145px;
+}
+
+.purple {
+  height: 35px;
+  width: 35px;
+  background-color: purple;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.green {
+  height: 35px;
+  width: 35px;
+  background-color: green;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.yellow {
+  height: 35px;
+  width: 35px;
+  background-color: yellow;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.tomato {
+  height: 35px;
+  width: 35px;
+  background-color: orange;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.red {
+  height: 35px;
+  width: 35px;
+  background-color: red;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.blue {
+  height: 35px;
+  width: 35px;
+  background-color: blue;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.color-palette button {
+  border: 2px solid white;
+}
+
+.color-palette button:hover {
+  border: 2px solid white;
+}
+
+.picked {
+  height: 35px;
+  width: 35px;
+  background-color: #8c4bc1;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.color-palette {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+  margin: 25px;
+  border: solid 5px yellowgreen;
+}
+
+.color-palette > * {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35px;
+  height: 35px;
+  margin: -17.5px;
+}
+
+.color-palette > *:nth-of-type(1) {
+  -webkit-transform: rotate(0deg) translate(50px) rotate(0deg);
+          transform: rotate(0deg) translate(50px) rotate(0deg);
+}
+
+.color-palette > *:nth-of-type(2) {
+  -webkit-transform: rotate(60deg) translate(50px) rotate(-60deg);
+          transform: rotate(60deg) translate(50px) rotate(-60deg);
+}
+
+.color-palette > *:nth-of-type(3) {
+  -webkit-transform: rotate(120deg) translate(50px) rotate(-120deg);
+          transform: rotate(120deg) translate(50px) rotate(-120deg);
+}
+
+.color-palette > *:nth-of-type(4) {
+  -webkit-transform: rotate(180deg) translate(50px) rotate(-180deg);
+          transform: rotate(180deg) translate(50px) rotate(-180deg);
+}
+
+.color-palette > *:nth-of-type(5) {
+  -webkit-transform: rotate(240deg) translate(50px) rotate(-240deg);
+          transform: rotate(240deg) translate(50px) rotate(-240deg);
+}
+
+.color-palette > *:nth-of-type(6) {
+  -webkit-transform: rotate(300deg) translate(50px) rotate(-300deg);
+          transform: rotate(300deg) translate(50px) rotate(-300deg);
+}
+
+.color-palette button {
+  display: block;
+  max-width: 100%;
+  border-radius: 50%;
+  -webkit-filter: grayscale(10%);
+          filter: grayscale(10%);
+  border: solid 5px whitesmoke;
+  -webkit-transition: .15s;
+  transition: .15s;
+}
+
+.color-palette button:hover, .color-palette button:active {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+/*# sourceMappingURL=color-picker.css.map */

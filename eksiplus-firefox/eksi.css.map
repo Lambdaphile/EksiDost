@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AACI,WADO,CACP,CAAC,AAAA,QAAQ,CAAC;EACN,KAAK,EAAE,OAAO;CAAG",
-    "sources": [
-        "eksi.sass"
-    ],
-    "names": [],
-    "file": "eksi.css"
-}

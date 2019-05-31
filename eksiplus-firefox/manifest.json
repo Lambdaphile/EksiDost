@@ -1,21 +1,29 @@
 {
+  "manifest_version": 2,
+  "name": "eksiplus",
+  "version": "2.0.0",
 
-    "manifest_version": 2,
-    "name": "eksiplus",
-    "version": "1.0.1",
+  "description": "Colors visited entry links on eksisozluk.com for better user experience while browsing topic lists",
+  "icons": {
+    "48": "icons/EksiPlus_48x48.png",
+    "96": "icons/EksiPlus_96x96.png"
+  },
 
-    "description": "Colors visited entry links on eksisozluk.com for better user experience while browsing topic lists",
+  "permissions": [
+    "tabs",
+    "cookies",
+    "https://eksisozluk.com/*"
+  ],
 
-    "icons": {
-      "48": "icons/EksiPlus_48x48.png",
-      "96": "icons/EksiPlus_96x96.png"
-    },
+  "page_action": {
+    "browser_style": true,
+    "default_title": "EksiPlus",
+    "default_icon": "icons/EksiPlus_x32.png",
+    "default_popup": "popup/color-picker.html",
+    "show_matches": ["https://eksisozluk.com/*"]
+  },
 
-    "content_scripts": [
-      {
-        "matches": ["https://eksisozluk.com/*"],
-        "css": ["eksi.css"]
-      }
-    ]
-
+  "background": {
+    "scripts": ["background_scripts/background.js"]
   }
+}
