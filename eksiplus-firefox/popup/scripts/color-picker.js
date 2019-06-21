@@ -40,7 +40,7 @@ colorPalette.forEach(color => {
       // Setting cookies
       browser.cookies.set({
         url: tabs[0].url,
-        name: "favourite-color1",
+        name: "favourite-color",
         value: JSON.stringify(cookieData.favouriteColor)
       });
     });
