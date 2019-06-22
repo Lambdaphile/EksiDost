@@ -1,4 +1,6 @@
-const colorPalette = document.querySelectorAll('.color-palette button');
+const colorPalette = document.querySelectorAll('.color-palette li');
+const customColor = document.getElementById('custom-color');
+const enterButton = document.querySelector('button');
 
 let cookieData = {
   favouriteColor: ''
@@ -45,6 +47,22 @@ colorPalette.forEach(color => {
       });
     });
   }
+});
+
+enterButton.addEventListener('click', () => {
+  getActiveTab().then(tabs => {
+    let customStyle = `.topic-list a:visited {
+      color: ${customColor.value};
+    }`;
+
+    injectCSS(customStyle);
+
+    browser.cookies.set({
+      url: tabs[0].url,
+      name: "favourite-color",
+      value: JSON.stringify(cookieData.favouriteColor)
+    });
+  });
 });
 
 browser.cookies.onChanged.addListener(changeInfo => {
