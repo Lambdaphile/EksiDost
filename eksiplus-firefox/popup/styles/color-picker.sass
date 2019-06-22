@@ -1,110 +1,71 @@
 *
-  margin: 0
-  padding: 1
-
-body
-  background-color: blanchedalmond
-  height: 145px
-  width: 145px
-
-.purple
-  height: 35px
-  width: 35px
-  background-color: purple
-  border-radius: 50%
-  border: 1px solid black
-
-.green
-  height: 35px
-  width: 35px
-  background-color: green
-  border-radius: 50%
-  border: 1px solid black
-
-.yellow
-  height: 35px
-  width: 35px
-  background-color: yellow
-  border-radius: 50%
-  border: 1px solid black
-
-.tomato
-  height: 35px
-  width: 35px
-  background-color: orange
-  border-radius: 50%
-  border: 1px solid black
-
-.red
-  height: 35px
-  width: 35px
-  background-color: red
-  border-radius: 50%
-  border: 1px solid black
-
-.blue
-  height: 35px
-  width: 35px
-  background-color: blue
-  border-radius: 50%
-  border: 1px solid black
-
-.color-palette button
-  border: 2px solid white
-  &:hover
-    border: 2px solid white
-
-.picked
-  height: 35px
-  width: 35px
-  background-color: #8c4bc1
-  border-radius: 50%
-  border: 1px solid black
+    margin: 0
+    padding: 0
 
 .color-palette
-  position: relative
-  width: 100px
-  height: 100px
-  padding: 0
-  border-radius: 50%
-  list-style: none
-  margin: 25px
-  border: solid 5px yellowgreen
-  > *
-    display: block
-    position: absolute
-    top: 50%
-    left: 50%
-    width: 35px
-    height: 35px
-    margin: -17.5px
-    &:nth-of-type(1)
-      -webkit-transform: rotate(0deg) translate(50px) rotate(0deg)
-      transform: rotate(0deg) translate(50px) rotate(0deg)
-    &:nth-of-type(2)
-      -webkit-transform: rotate(60deg) translate(50px) rotate(-60deg)
-      transform: rotate(60deg) translate(50px) rotate(-60deg)
-    &:nth-of-type(3)
-      -webkit-transform: rotate(120deg) translate(50px) rotate(-120deg)
-      transform: rotate(120deg) translate(50px) rotate(-120deg)
-    &:nth-of-type(4)
-      -webkit-transform: rotate(180deg) translate(50px) rotate(-180deg)
-      transform: rotate(180deg) translate(50px) rotate(-180deg)
-    &:nth-of-type(5)
-      -webkit-transform: rotate(240deg) translate(50px) rotate(-240deg)
-      transform: rotate(240deg) translate(50px) rotate(-240deg)
-    &:nth-of-type(6)
-      -webkit-transform: rotate(300deg) translate(50px) rotate(-300deg)
-      transform: rotate(300deg) translate(50px) rotate(-300deg)
-  button
-    display: block
-    max-width: 100%
-    border-radius: 50%
-    -webkit-filter: grayscale(10%)
-    filter: grayscale(10%)
-    border: solid 5px whitesmoke
-    -webkit-transition: .15s
-    transition: .15s
-    &:hover, &:active
-      -webkit-filter: grayscale(0)
-      filter: grayscale(0)
+    margin: 0 4px
+
+%shape
+    height: 25px
+    width: 25px
+
+    margin: 5px 3px
+
+    display: inline-block
+
+    border: .1px solid grey
+    border-radius: 25%
+
+.white
+    @extend %shape
+    
+    background-color: white
+
+.yellow
+    @extend %shape
+
+    background-color: yellow
+
+.tomato
+    @extend %shape
+
+    background-color: tomato
+
+.red
+    @extend  %shape
+
+    background-color: red
+
+.green
+    @extend  %shape
+
+    background-color: green
+
+.blue
+    @extend %shape
+
+    background-color: blue
+
+.purple
+    @extend  %shape
+
+    background-color: purple
+
+.black
+    @extend  %shape
+    
+    background-color: black
+
+.custom-color-form
+    position: relative
+    margin: 0 5px 5px 5px
+
+label
+    margin: 0px 5px
+
+    display: inline-block
+
+input
+    width: 150px
+
+    display: inline-block
