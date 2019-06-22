@@ -39,7 +39,9 @@ function cookieUpdate() {
   });
 }
 
-// update when the tab is activated
-browser.tabs.onActivated.addListener(cookieUpdate);
+const filter = {
+  urls: ["*://eksisozluk.com/*"]
+}
+
 // update when the tab is updated
-browser.tabs.onUpdated.addListener(cookieUpdate);
+browser.tabs.onUpdated.addListener(cookieUpdate, filter);
