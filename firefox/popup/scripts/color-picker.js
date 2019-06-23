@@ -28,8 +28,9 @@ colorPalette.forEach(color => {
   color.onclick = event => {
     getActiveTab().then(tabs => {
       // getting favourite color value
+      const bg = getComputedStyle(color);
       let favouriteColor = `.topic-list a:visited {
-        color: ${event.target.getAttribute('class')};
+        color: ${bg.backgroundColor};
       }`;
 
       // ejectCSS to remove previous styles

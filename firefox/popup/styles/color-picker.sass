@@ -2,19 +2,45 @@
     margin: 0
     padding: 0
 
+body, html 
+    margin: 0
+    padding: 0
+    background-color: #f2f2f2
+    width: 253px
+    height: 66px
+
+.line
+    height: 1px
+    width: 268px
+    
+    border-bottom: .5px solid #e9e9e9
+    background-color: black
+
+
 .color-palette
-    margin: 0 4px
+  background: linear-gradient(top, #f2f2f2, #cbcbcb);
+  color: #4d494d;
+  font-size: 10px
+  cursor: default
+
+
+
 
 %shape
     height: 25px
     width: 25px
 
-    margin: 5px 3px
+    margin: 5px 2px 1px 2px
 
     display: inline-block
-
-    border: .1px solid grey
+    
+    border: .5px solid #a3aaae
     border-radius: 25%
+
+    cursor: pointer
+
+    &:hover
+        border: 2px solid lightblue
 
 .white
     @extend %shape
@@ -24,27 +50,27 @@
 .yellow
     @extend %shape
 
-    background-color: yellow
+    background-color: #FFD60A
 
 .tomato
     @extend %shape
 
-    background-color: tomato
+    background-color: #FF9F0A
 
 .red
     @extend  %shape
 
-    background-color: red
+    background-color: #FF453A
 
 .green
     @extend  %shape
 
-    background-color: green
+    background-color: #32FF4B
 
 .blue
     @extend %shape
 
-    background-color: blue
+    background-color: #0A84FF
 
 .purple
     @extend  %shape
@@ -54,18 +80,18 @@
 .black
     @extend  %shape
     
-    background-color: black
+    background-color: #a3aaae
 
 .custom-color-form
+    background: linear-gradient(top, #cbcbcb, #aeaeae);
     position: relative
-    margin: 0 5px 5px 5px
+    padding: 6px 0
 
 label
-    margin: 0px 5px
-
+    margin: 0px 0px
+    
     display: inline-block
 
 input
-    width: 150px
 
     display: inline-block

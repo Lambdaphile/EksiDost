@@ -15,7 +15,7 @@
     "https://eksisozluk.com/*"
 ],
 
-  "page_action": {
+  "browser_action": {
     "browser_style": true,
     "default_title": "EksiDost",
     "default_icon": "icons/eksiDost-32.png",
