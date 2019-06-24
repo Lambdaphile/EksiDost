@@ -1,5 +1,5 @@
 const colorPalette = document.querySelectorAll('.color-palette li');
-const customColor = document.getElementById('custom-color');
+const customColor = document.getElementById('custom-color-input');
 const enterButton = document.querySelector('button');
 
 let cookieData = {
