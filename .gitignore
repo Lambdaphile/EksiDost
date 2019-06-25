@@ -1,7 +1,7 @@
 web-ext-artifacts/
 
-eksi-structure.txt
-
-ideas/
+node_modules/
 
 .TODO
+
+.eslintrc.json
