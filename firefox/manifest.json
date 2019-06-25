@@ -14,7 +14,11 @@
     "tabs",
     "cookies",
     "*://eksisozluk.com/*"
-],
+  ],
+
+  "background": {
+    "page": "./background_scripts/background.html"
+  },
 
   "page_action": {
     "browser_style": true,
@@ -22,9 +26,5 @@
     "default_icon": "icons/eksiDost-32.png",
     "default_popup": "popup/color-picker.html",
     "show_matches": ["*://eksisozluk.com/*"]
-  },
-
-  "background": {
-    "scripts": ["background_scripts/background.js"]
   }
 }

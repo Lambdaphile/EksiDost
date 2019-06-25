@@ -1,47 +1,36 @@
-function getActiveTab() {
-  return browser.tabs.query({active: true, currentWindow: true});
-}
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/extensions */
+/* eslint-disable no-undef */
+import {
+  getActiveTab, injectCSS, setCookies, onError,
+} from '../modules/module.js';
 
-function injectCSS(css) {
-  function onError(error) {
-    console.log(`Error: ${error}`);
-  }
-  let injectingCSS = browser.tabs.insertCSS({code: css});
-  injectingCSS.then(null, onError);
-}
-
-function cookieUpdate() {
-  getActiveTab().then(tabs => {
-    // Getting previously set cookies
-    let gettingCookies = browser.cookies.get({
+function handlePageReload() {
+  getActiveTab().then((tabs) => {
+    /* getting previously set cookies */
+    const gettingCookies = browser.cookies.get({
       url: tabs[0].url,
-      name: 'favourite-color'
+      name: 'favourite-color',
     });
 
-    gettingCookies.then(cookie => {
+    gettingCookies.then((cookie) => {
+      /* if there are availible cookies - insert styles */
       if (cookie) {
-        // if there are availible cookies - insert
-        let favouriteColor = JSON.parse(cookie.value);
+        const favouriteColor = JSON.parse(cookie.value);
         injectCSS(favouriteColor);
-      } 
-      else {
-        // default styles for fresh installs
+      } else {
+        /* default styles for fresh installs... */
         const defaultStyle = '.topic-list a:visited {color: purple;}';
         injectCSS(defaultStyle);
-
-        browser.cookies.set({
-          url: tabs[0].url,
-          name: 'favourite-color',
-          value: JSON.stringify(defaultStyle)
-        });
+        setCookies(tabs[0].url, 'favourite-color', defaultStyle);
       }
-    })
+    });
   });
 }
 
 const filter = {
-  urls: ["*://eksisozluk.com/*"]
-}
+  urls: ['*://eksisozluk.com/*'],
+};
 
-// update when the tab is updated
-browser.tabs.onUpdated.addListener(cookieUpdate, filter);
+/* update when the tab is updated */
+browser.tabs.onUpdated.addListener(handlePageReload, filter);
