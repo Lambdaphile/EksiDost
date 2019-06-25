@@ -22,8 +22,6 @@ body
     display: inline-block
     cursor: pointer
 
-   
-
 .white
     @extend %shape
     background-color: white
@@ -89,7 +87,7 @@ body
     &:hover
         border: 1.5px solid #000000
 
-.line
+.seperator-line
     height: 1px
     width: auto
 
@@ -103,10 +101,9 @@ body
 
     background: linear-gradient(top, #cbcbcb, #a9a9a9)
     
-    padding: 4px 0px 4px 7px
+    padding: 4px 0px 5px 7px
     
     position: relative
-
 
 label
     margin: 0px 0px
@@ -119,24 +116,24 @@ label
     margin-right: 1px
 
     display: inline-block
-    
 
 .submit
-    font: 8px/1 "Verdana", sans-serif
+    font: "Verdana", sans-serif
+    font-size: 8px
     
-    text-align: center
-    text-shadow: 0px 0px #000000
+    line-height: 6px
+    text-shadow: .5px .5px #000000
 
     color: #ffffff
     
-    background: linear-gradient(#72a1cb, #37546e)
+    background: linear-gradient(top, #4092f1, #0d58af)
     
-    border: .5px solid #556699
+    border: .5px solid #506a78
+
     border-radius: 1000px
     
     padding: 6px 8px
     
     display: inline-block;
     &:active
-        color: #000000;
-        background: linear-gradient(#5886b0, #2c4358)
+        background: linear-gradient(top, #1173e5, #0a458a)
