@@ -24,7 +24,7 @@
     "browser_style": true,
     "default_title": "EksiDost",
     "default_icon": "icons/eksiDost-32.png",
-    "default_popup": "popup/color-picker.html",
+    "default_popup": "popup/color-palette.html",
     "show_matches": ["*://eksisozluk.com/*"]
   }
 }

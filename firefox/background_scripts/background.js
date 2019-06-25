@@ -16,13 +16,13 @@ function handlePageReload() {
     gettingCookies.then((cookie) => {
       /* if there are availible cookies - insert styles */
       if (cookie) {
-        const favouriteColor = JSON.parse(cookie.value);
-        injectCSS(favouriteColor);
+        const cookieCSS = JSON.parse(cookie.value);
+        injectCSS(cookieCSS);
       } else {
         /* default styles for fresh installs... */
-        const defaultStyle = '.topic-list a:visited {color: purple;}';
-        injectCSS(defaultStyle);
-        setCookies(tabs[0].url, 'favourite-color', defaultStyle);
+        const defaultCSS = '.topic-list a:visited {color: purple;}';
+        injectCSS(defaultCSS);
+        setCookies(tabs[0].url, 'favourite-color', defaultCSS);
       }
     });
   });

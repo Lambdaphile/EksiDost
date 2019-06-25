@@ -9,7 +9,7 @@ import {
 
 const colorPalette = document.querySelectorAll('.color-palette li');
 const customColorInput = document.getElementById('custom-color-input');
-const customColorSumit = document.querySelector('.submit');
+const customColorSubmit = document.querySelector('.submit');
 
 function setColor(event) {
   getActiveTab().then((tabs) => {
@@ -34,14 +34,14 @@ colorPalette.forEach((color) => {
   color.addEventListener('click', setColor, false);
 });
 
-customColorSumit.addEventListener('click', () => {
+customColorSubmit.addEventListener('click', () => {
   getActiveTab().then((tabs) => {
-    const customStyle = `.topic-list a:visited {
+    const customCSS = `.topic-list a:visited {
       color: ${customColorInput.value};
     }`;
 
-    injectCSS(customStyle);
-    setCookies(tabs[0].url, 'favourite-color', customStyle);
+    injectCSS(customCSS);
+    setCookies(tabs[0].url, 'favourite-color', customCSS);
   });
 });
 
