@@ -19,10 +19,10 @@ function setColor(event) {
       color: ${paletteElement.backgroundColor};
     }`;
 
-    /* ejectCSS to remove previous styles */
+    /* remove previous set styles */
     ejectCSS(css);
 
-    /* injectCSS to insert new styles */
+    /* insert new styles */
     injectCSS(css);
 
     /* Setting cookies */
@@ -40,7 +40,9 @@ customColorSubmit.addEventListener('click', () => {
       color: ${customColorInput.value};
     }`;
 
+    ejectCSS(customCSS);
     injectCSS(customCSS);
+
     setCookies(tabs[0].url, 'favourite-color', customCSS);
   });
 });
