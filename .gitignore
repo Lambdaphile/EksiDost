@@ -5,3 +5,6 @@ node_modules/
 .TODO
 
 .eslintrc.json
+
+package-lock.json
+package.json
