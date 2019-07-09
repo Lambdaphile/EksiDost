@@ -12,22 +12,20 @@ const customColorInput = document.getElementById('custom-color-input');
 const customColorSubmit = document.querySelector('.submit');
 
 function setColor(event) {
-  getActiveTab().then((tabs) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     /* getting selected color value */
     const paletteElement = getComputedStyle(event.target);
+
     const css = `.topic-list a:visited {
       color: ${paletteElement.backgroundColor};
     }`;
 
     /* remove previous set styles */
-    ejectCSS(css);
 
     /* insert new styles */
-    injectCSS(css);
-
-    /* Setting cookies */
-    setCookies(tabs[0].url, 'favourite-color', css);
+    chrome.tabs.insertCSS(tabs[0].id, { code: css });
   });
+  /* Setting cookies */
 }
 
 colorPalette.forEach((color) => {
@@ -47,7 +45,7 @@ customColorSubmit.addEventListener('click', () => {
   });
 });
 
-browser.cookies.onChanged.addListener((changeInfo) => {
+chrome.cookies.onChanged.addListener((changeInfo) => {
   console.log(
     `Cookie changed:\n
         * Cookie: ${JSON.stringify(changeInfo.cookie)}\n

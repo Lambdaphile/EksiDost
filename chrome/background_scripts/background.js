@@ -1,36 +1,33 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/extensions */
 /* eslint-disable no-undef */
-import {
-  getActiveTab, injectCSS, setCookies, onError,
-} from '../modules/module.js';
+
 
 function handlePageReload() {
-  getActiveTab().then((tabs) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     /* getting previously set cookies */
-    const gettingCookies = browser.cookies.get({
+    chrome.cookies.get({
       url: tabs[0].url,
       name: 'favourite-color',
-    });
-
-    gettingCookies.then((cookie) => {
+    }, (cookie) => {
       /* if there are availible cookies - insert styles */
       if (cookie) {
         const cookieCSS = JSON.parse(cookie.value);
-        injectCSS(cookieCSS);
+        chrome.tabs.insertCSS(cookieCSS);
       } else {
         /* default styles for fresh installs... */
         const defaultCSS = '.topic-list a:visited {color: purple;}';
-        injectCSS(defaultCSS);
-        setCookies(tabs[0].url, 'favourite-color', defaultCSS);
+        chrome.tabs.insertCSS({ code: defaultCSS });
+
+        chrome.cookies.set({
+          url: tabs[0].url,
+          name: 'favourite-color',
+          value: defaultCSS,
+        });
       }
     });
   });
 }
 
-const filter = {
-  urls: ['*://eksisozluk.com/*'],
-};
-
 /* update when the tab is updated */
-browser.tabs.onUpdated.addListener(handlePageReload, filter);
+chrome.tabs.onUpdated.addListener(handlePageReload);
