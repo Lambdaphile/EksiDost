@@ -1,10 +1,8 @@
-/* eslint-disable import/named */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
+/* eslint-disable import/extensions */
+
 import {
-  getActiveTab, injectCSS, ejectCSS, setCookies, onError,
+  injectCSS, setCookies,
 } from '../../modules/module.js';
 
 const colorPalette = document.querySelectorAll('.color-palette li');
@@ -14,18 +12,17 @@ const customColorSubmit = document.querySelector('.submit');
 function setColor(event) {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     /* getting selected color value */
-    const paletteElement = getComputedStyle(event.target);
-
-    const css = `.topic-list a:visited {
-      color: ${paletteElement.backgroundColor};
+    const colorPaletteElement = getComputedStyle(event.target);
+    const style = `.topic-list a:visited {
+      color: ${colorPaletteElement.backgroundColor};
     }`;
 
-    /* remove previous set styles */
-
     /* insert new styles */
-    chrome.tabs.insertCSS(tabs[0].id, { code: css });
+    injectCSS(style);
+
+    /* setting cookies */
+    setCookies(tabs[0].url, 'favourite-color', style);
   });
-  /* Setting cookies */
 }
 
 colorPalette.forEach((color) => {
@@ -33,15 +30,16 @@ colorPalette.forEach((color) => {
 });
 
 customColorSubmit.addEventListener('click', () => {
-  getActiveTab().then((tabs) => {
-    const customCSS = `.topic-list a:visited {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    const customStyle = `.topic-list a:visited {
       color: ${customColorInput.value};
     }`;
 
-    ejectCSS(customCSS);
-    injectCSS(customCSS);
+    /* insert custom styles */
+    injectCSS(customStyle);
 
-    setCookies(tabs[0].url, 'favourite-color', customCSS);
+    /* set custom style cookies */
+    setCookies(tabs[0].url, 'favourite-color', customStyle);
   });
 });
 
