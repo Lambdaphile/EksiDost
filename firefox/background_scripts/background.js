@@ -2,7 +2,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-undef */
 import {
-  getActiveTab, injectCSS, setCookies, onError,
+  getActiveTab, injectCSS, onError, setCookies,
 } from '../modules/module.js';
 
 function handlePageReload() {
@@ -21,16 +21,14 @@ function handlePageReload() {
       } else {
         /* default styles for fresh installs... */
         const defaultCSS = '.topic-list a:visited {color: purple;}';
+
         injectCSS(defaultCSS);
+
         setCookies(tabs[0].url, 'favourite-color', defaultCSS);
       }
     });
   });
 }
 
-const filter = {
-  urls: ['*://eksisozluk.com/*'],
-};
-
 /* update when the tab is updated */
-browser.tabs.onUpdated.addListener(handlePageReload, filter);
+browser.tabs.onUpdated.addListener(handlePageReload);
