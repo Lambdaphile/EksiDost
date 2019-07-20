@@ -1,5 +1,5 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable import/extensions */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import {
   getActiveTab, injectCSS, setCookies, onError,
@@ -21,7 +21,6 @@ function handlePageReload() {
       } else {
         /* default styles for fresh installs... */
         const defaultStyle = '.topic-list a:visited {color: purple;}';
-
         injectCSS(defaultStyle);
 
         setCookies(tabs[0].url, 'favourite-color', defaultStyle);

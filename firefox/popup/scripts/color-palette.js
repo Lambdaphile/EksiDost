@@ -1,5 +1,3 @@
-/* eslint-disable import/named */
-/* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
@@ -19,9 +17,8 @@ function setColor(event) {
       color: ${paletteElement.backgroundColor};
     }`;
 
-    /* remove previous set styles */
+    /* remove previously set styles */
     ejectCSS(style);
-
     /* insert new styles */
     injectCSS(style);
 
