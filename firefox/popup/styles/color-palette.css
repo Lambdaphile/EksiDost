@@ -27,56 +27,56 @@ body {
 
 .white {
   background-color: white;
-  border-color: #CCCCCC;
+  border-color: #cccccc;
 }
 
 .white:hover {
-  border: 1.5px solid #CCCCCC;
+  border: 1.5px solid #cccccc;
 }
 
 .yellow {
-  background-color: #FFD60A;
-  border-color: #CCAB08;
+  background-color: #ffd60a;
+  border-color: #ccab08;
 }
 
 .yellow:hover {
-  border: 1.5px solid #CCAB08;
+  border: 1.5px solid #ccab08;
 }
 
 .tomato {
-  background-color: #FF9F0A;
-  border-color: #CC7F08;
+  background-color: #ff9f0a;
+  border-color: #cc7f08;
 }
 
 .tomato:hover {
-  border: 1.5px solid #CC7F08;
+  border: 1.5px solid #cc7f08;
 }
 
 .red {
-  background-color: #FF453A;
-  border-color: #CC372E;
+  background-color: #ff453a;
+  border-color: #cc372e;
 }
 
 .red:hover {
-  border: 1.5px solid #CC372E;
+  border: 1.5px solid #cc372e;
 }
 
 .green {
-  background-color: #32FF4B;
-  border-color: #28CC3C;
+  background-color: #32ff4b;
+  border-color: #28cc3C;
 }
 
 .green:hover {
-  border: 1.5px solid #28CC3C;
+  border: 1.5px solid #28cc3C;
 }
 
 .blue {
-  background-color: #0A84FF;
-  border-color: #0869CC;
+  background-color: #0a84ff;
+  border-color: #0869cc;
 }
 
 .blue:hover {
-  border: 1.5px solid #0869CC;
+  border: 1.5px solid #0869cc;
 }
 
 .purple {
