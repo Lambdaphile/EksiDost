@@ -2,7 +2,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-undef */
 import {
-  getActiveTab, injectCSS, onError, setCookies,
+  getActiveTab, injectCSS, setCookies, onError,
 } from '../modules/module.js';
 
 function handlePageReload() {
@@ -16,15 +16,15 @@ function handlePageReload() {
     gettingCookies.then((cookie) => {
       /* if there are availible cookies - insert styles */
       if (cookie) {
-        const cookieCSS = JSON.parse(cookie.value);
-        injectCSS(cookieCSS);
+        const cookieStyle = JSON.parse(cookie.value);
+        injectCSS(cookieStyle);
       } else {
         /* default styles for fresh installs... */
-        const defaultCSS = '.topic-list a:visited {color: purple;}';
+        const defaultStyle = '.topic-list a:visited {color: purple;}';
 
-        injectCSS(defaultCSS);
+        injectCSS(defaultStyle);
 
-        setCookies(tabs[0].url, 'favourite-color', defaultCSS);
+        setCookies(tabs[0].url, 'favourite-color', defaultStyle);
       }
     });
   });

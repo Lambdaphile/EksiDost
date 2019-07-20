@@ -15,18 +15,18 @@ function setColor(event) {
   getActiveTab().then((tabs) => {
     /* getting selected color value */
     const paletteElement = getComputedStyle(event.target);
-    const css = `.topic-list a:visited {
+    const style = `.topic-list a:visited {
       color: ${paletteElement.backgroundColor};
     }`;
 
     /* remove previous set styles */
-    ejectCSS(css);
+    ejectCSS(style);
 
     /* insert new styles */
-    injectCSS(css);
+    injectCSS(style);
 
     /* Setting cookies */
-    setCookies(tabs[0].url, 'favourite-color', css);
+    setCookies(tabs[0].url, 'favourite-color', style);
   });
 }
 
@@ -36,14 +36,14 @@ colorPalette.forEach((color) => {
 
 customColorSubmit.addEventListener('click', () => {
   getActiveTab().then((tabs) => {
-    const customCSS = `.topic-list a:visited {
+    const customStyle = `.topic-list a:visited {
       color: ${customColorInput.value};
     }`;
 
-    ejectCSS(customCSS);
-    injectCSS(customCSS);
+    ejectCSS(customStyle);
+    injectCSS(customStyle);
 
-    setCookies(tabs[0].url, 'favourite-color', customCSS);
+    setCookies(tabs[0].url, 'favourite-color', customStyle);
   });
 });
 
