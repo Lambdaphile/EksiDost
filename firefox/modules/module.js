@@ -1,6 +1,10 @@
 /* eslint-disable no-undef */
 function getActiveTab() {
-  return browser.tabs.query({ active: true, currentWindow: true });
+  return browser.tabs.query({
+    active: true,
+    currentWindow: true,
+    url: '*://eksisozluk.com/*',
+  });
 }
 
 function onError(error) {

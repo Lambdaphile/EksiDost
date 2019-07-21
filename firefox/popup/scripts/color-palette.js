@@ -9,7 +9,7 @@ const colorPalette = document.querySelectorAll('.color-palette li');
 const customColorInput = document.getElementById('custom-color-input');
 const customColorSubmit = document.querySelector('.submit');
 
-function setColor(event) {
+function setStyles(event) {
   getActiveTab().then((tabs) => {
     /* getting selected color value */
     const paletteElement = getComputedStyle(event.target);
@@ -28,7 +28,7 @@ function setColor(event) {
 }
 
 colorPalette.forEach((color) => {
-  color.addEventListener('click', setColor, false);
+  color.addEventListener('click', setStyles, false);
 });
 
 customColorSubmit.addEventListener('click', () => {
