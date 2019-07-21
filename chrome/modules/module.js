@@ -1,4 +1,10 @@
 /* eslint-disable no-undef */
+
+function getActiveTab(callback) {
+  chrome.tabs.query({ active: true, currentWindow: true, url: '*://eksisozluk.com/*' }, (tabs) => {
+    callback(tabs);
+  });
+}
 function injectCSS(style) {
   chrome.tabs.insertCSS({ code: style });
 }
@@ -21,5 +27,5 @@ function setCookies(cookieUrl, cookieName, cookieValue) {
 }
 
 export {
-  injectCSS, setCookies,
+  getActiveTab, injectCSS, setCookies,
 };
