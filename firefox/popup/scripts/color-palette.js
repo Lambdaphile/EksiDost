@@ -9,26 +9,24 @@ const colorPalette = document.querySelectorAll('.color-palette li');
 const customColorInput = document.getElementById('custom-color-input');
 const customColorSubmit = document.querySelector('.submit');
 
-function setStyles(event) {
-  getActiveTab().then((tabs) => {
-    /* getting selected color value */
-    const paletteElement = getComputedStyle(event.target);
-    const style = `.topic-list a:visited {
-      color: ${paletteElement.backgroundColor};
-    }`;
-
-    /* remove previously set styles */
-    ejectCSS(style);
-    /* insert new styles */
-    injectCSS(style);
-
-    /* Setting cookies */
-    setCookies(tabs[0].url, 'favourite-color', style);
-  });
-}
-
 colorPalette.forEach((color) => {
-  color.addEventListener('click', setStyles, false);
+  color.addEventListener('click', (event) => {
+    getActiveTab().then((tabs) => {
+      /* take selected color value and create the css code */
+      const paletteElement = getComputedStyle(event.target);
+      const style = `.topic-list a:visited {
+        color: ${paletteElement.backgroundColor};
+      }`;
+
+      /* removes dublicating styles - if there are any... */
+      ejectCSS(style);
+      /* insert new styles */
+      injectCSS(style);
+
+      /* setting cookies... */
+      setCookies(tabs[0].url, 'favourite-color', style);
+    });
+  }, false);
 });
 
 customColorSubmit.addEventListener('click', () => {
@@ -47,8 +45,8 @@ customColorSubmit.addEventListener('click', () => {
 browser.cookies.onChanged.addListener((changeInfo) => {
   console.log(
     `Cookie changed:\n
-        * Cookie: ${JSON.stringify(changeInfo.cookie)}\n
-        * Cause: ${changeInfo.cause}\n
-        * Removed: ${changeInfo.removed}`,
+      * Cookie: ${JSON.stringify(changeInfo.cookie)}\n
+      * Cause: ${changeInfo.cause}\n
+      * Removed: ${changeInfo.removed}`,
   );
 });
