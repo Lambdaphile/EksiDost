@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "eksiDost",
-  "version": "2.3.2",
+  "version": "2.4.0",
 
-  "description": "Colors visited entry links on eksisozluk.com for better user experience while browsing topic lists",
+  "description": "Colors visited entry links on eksisozluk.com for better user experience while browsing topic lists.",
 
   "icons": {
     "48": "icons/eksiDost-48.png",
@@ -22,11 +22,9 @@
   
   "page_action": {
     "browser_style": true,
-    "default_title": "EksiDost",
+    "default_title": "eksiDost",
     "default_icon": "icons/eksiDost-32.png",
     "default_popup": "popup/color-palette.html",
-    "show_matches": [
-      "*://eksisozluk.com/*"
-    ]
+    "show_matches": ["*://eksisozluk.com/*"]
   }
 }
