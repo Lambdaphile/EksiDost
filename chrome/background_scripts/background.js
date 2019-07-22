@@ -5,8 +5,10 @@ import {
 } from '../modules/module.js';
 
 function cookieUpdate() {
-  /* getting previously set styles from cookies */
   getActiveTab((tabs) => {
+    chrome.pageAction.show(tabs[0].id);
+
+    /* getting previously set styles from cookies */
     chrome.cookies.get({
       url: tabs[0].url,
       name: 'favourite-color',

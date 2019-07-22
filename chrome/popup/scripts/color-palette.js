@@ -10,7 +10,7 @@ const customColorInput = document.getElementById('custom-color-input');
 const customColorSubmit = document.querySelector('.submit');
 
 colorPalette.forEach((color) => {
-  color.addEventListener('click', (event) => { 
+  color.addEventListener('click', (event) => {
     getActiveTab((tabs) => {
       /* take selected color value and create the css code */
       const colorPaletteElement = getComputedStyle(event.target);
