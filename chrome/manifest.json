@@ -20,7 +20,7 @@
     "page": "./background_scripts/background.html"
   },
 
-  "browser_action": {
+  "page_action": {
     "default_title": "EksiDost",
     "default_icon": "icons/eksiDost-32.png",
     "default_popup": "./popup/color-palette.html"
