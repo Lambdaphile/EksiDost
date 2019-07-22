@@ -8,7 +8,7 @@ body
 
     background-color: #f2f2f2
 
-%palette-slot
+%palette-element
     height: 25px
     width: 25px
 
@@ -22,7 +22,7 @@ body
     &:hover
         margin: 3.7px .7px .7px .7px
 
-=setColors($backgroundColor, $borderColor)
+=colorize($backgroundColor, $borderColor)
     background-color: $backgroundColor
 
     border-color: $borderColor
@@ -38,46 +38,46 @@ body
     padding: 1.2px 3px
 
 .white
-    @extend %palette-slot
+    @extend %palette-element
 
-    +setColors(white, #cccccc)
+    +colorize(white, #cccccc)
 
 .yellow
-    @extend %palette-slot
+    @extend %palette-element
 
-    +setColors(#ffd60a, #ccab08)
+    +colorize(#ffd60a, #ccab08)
 
 .tomato
-    @extend %palette-slot
+    @extend %palette-element
 
-    +setColors(#ff9f0a, #cc7f08)
+    +colorize(#ff9f0a, #cc7f08)
 
 .red
-    @extend  %palette-slot
+    @extend  %palette-element
     
-    +setColors(#ff453a, #cc372e)
+    +colorize(#ff453a, #cc372e)
 
 .green
-    @extend  %palette-slot
+    @extend  %palette-element
     
-    +setColors(#32ff4b, #28cc3C)
+    +colorize(#32ff4b, #28cc3C)
 
 .blue
-    @extend %palette-slot
+    @extend %palette-element
     
-    +setColors(#0a84ff, #0869cc)
+    +colorize(#0a84ff, #0869cc)
 
 .purple
-    @extend  %palette-slot
+    @extend  %palette-element
     
-    +setColors(purple, #660066)
+    +colorize(purple, #660066)
 
 .black
-    @extend  %palette-slot
+    @extend  %palette-element
     
-    +setColors(#000000, #000000)
+    +colorize(#000000, #000000)
 
-.seperator-line
+.seperator
     height: 1px
     width: auto
 

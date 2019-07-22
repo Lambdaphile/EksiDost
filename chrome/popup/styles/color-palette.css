@@ -103,7 +103,7 @@ body {
   border: 1.5px solid #000000;
 }
 
-.seperator-line {
+.seperator {
   height: 1px;
   width: auto;
   background-color: gray;
