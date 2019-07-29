@@ -3,7 +3,7 @@
   "name": "eksiDost",
   "version": "2.5.1",
 
-  "description": "Colors visited entry links on eksisozluk.com for better user experience while browsing topic lists.",
+  "description": "Improves UX by coloring visited entries on eksisozluk.com",
 
   "icons": {
     "96": "icons/eksiDost-96.png"
