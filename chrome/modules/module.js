@@ -11,9 +11,9 @@ function injectCSS(style) {
 
 function setCookies(cookieUrl, cookieName, cookieValue) {
   /*
-   * Cutting semilicon from the cookie value, because
+   * Cutting semicolon from the cookie value because
    * Chrome does not accept them. Cutting closing curly
-   * bracked too, for easier restoration later...
+   * bracket for easier restoration later...
    */
   let style = cookieValue;
   style = style.replace(';', '');
@@ -22,6 +22,7 @@ function setCookies(cookieUrl, cookieName, cookieValue) {
   chrome.cookies.set({
     url: cookieUrl,
     name: cookieName,
+    expirationDate: (new Date().getTime() / 1000) * 10,
     value: JSON.stringify(style),
   });
 }

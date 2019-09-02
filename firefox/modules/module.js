@@ -25,6 +25,7 @@ function setCookies(cookieUrl, cookieName, cookieValue) {
   browser.cookies.set({
     url: cookieUrl,
     name: cookieName,
+    expirationDate: (new Date().getTime() / 1000) * 10,
     value: JSON.stringify(cookieValue),
   });
 }
