@@ -1,7 +1,12 @@
 web-ext-artifacts/
-
 node_modules/
 
 .TODO
-
 .eslintrc.json
+
+firefox/popup/styles/color-palette.css
+firefox/popup/styles/color-palette.css.map
+
+chrome/popup/styles/color-palette.css
+chrome/popup/styles/color-palette.css.map
+
