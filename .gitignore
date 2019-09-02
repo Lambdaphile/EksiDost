@@ -3,6 +3,7 @@ node_modules/
 
 .TODO
 .eslintrc.json
+chrome.zip
 
 firefox/popup/styles/color-palette.css
 firefox/popup/styles/color-palette.css.map
